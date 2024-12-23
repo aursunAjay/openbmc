@@ -1,23 +1,18 @@
+# Define default values for v and i if they are not provided
+v ?= 1.0   # Default version if not provided
+i ?= "Release"   # Default tag message if not provided
+
 all:
 	git add meta-krutrim/ Makefile
 	git commit -m "local"
-	git tag -a v$(v)-dev-main -m "$(i)"
-	git branch -a
-	git tag
-	git push --tags
-	
-main:
-	git add meta-krutrim/
-	git commit -m "local"
-	git branch -a
-	git tag
-	git push  
+	git checkout main  # Ensure you're on the main branch
+	git tag -a v$(v)-dev-main -m "$(i)"  # Create tag with version v and message i
+	git push --tags   # Push the tag to remote
 
 info:
-	git add meta-krutrim/
+	git add meta-krutrim/ Makefile
 	git commit -m "local"
-	git tag -a v0.1-dev-main -m "$(MESSAGE)"
-	git branch -a
-	git tag
-	git push --tags
+	git checkout main  # Ensure you're on the main branch
+	git tag -a v$(v)-dev-main -m "$(i)"  # Create tag with version v and message i
+	git push --tags   # Push the tag to remote
 

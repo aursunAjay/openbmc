@@ -1,7 +1,7 @@
 all:
 	git add meta-krutrim/ Makefile
 	git commit -m "local"
-	git tag -a v0.1-dev-main -m "$(info)"
+	git tag -a v$(v)-dev-main -m "$(i)"
 	git branch -a
 	git tag
 	git push --tags

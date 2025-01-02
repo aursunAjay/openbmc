@@ -1,5 +1,3 @@
-#MACHINE ?= "p10bmc"
-#MACHINE ?= "swift"
 MACHINE ??= "krutrim"
 DISTRO ?= "openbmc-openpower"
 PACKAGE_CLASSES ?= "package_ipk"

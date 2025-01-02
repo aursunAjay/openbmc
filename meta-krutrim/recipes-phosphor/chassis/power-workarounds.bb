@@ -1,3 +1,5 @@
+# files added inside this location krutrim and witherpoon files contents added 
+
 SUMMARY = "Power device Workarounds"
 PR = "r1"
 LICENSE = "Apache-2.0"
@@ -29,8 +31,11 @@ INSTFMT_WA = "power-workarounds@{0}.service"
 TGTFMT = "obmc-chassis-poweron@{0}.target"
 FMT_WA = "../${TMPL_WA}:${TGTFMT}.requires/${INSTFMT_WA}"
 
-SYSTEMD_SERVICE:${PN}:append:krutrim = " ${TMPL_WA}"
-SYSTEMD_LINK:${PN}:append:krutrim = "${@compose_list(d, 'FMT_WA', 'OBMC_CHASSIS_INSTANCES')}"
+SYSTEMD_SERVICE:${PN}:append:witherspoon = " ${TMPL_WA}"
+SYSTEMD_LINK:${PN}:append:witherspoon = "${@compose_list(d, 'FMT_WA', 'OBMC_CHASSIS_INSTANCES')}"
 
 SYSTEMD_SERVICE:${PN}:append:swift = " ${TMPL_WA}"
 SYSTEMD_LINK:${PN}:append:swift = "${@compose_list(d, 'FMT_WA', 'OBMC_CHASSIS_INSTANCES')}"
+
+# Added Sytemd services location here 
+SYSTEMD_SERVICE:${PN}:append:krutrim = " ${TMPL_WA}"

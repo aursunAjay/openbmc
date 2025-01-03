@@ -6,7 +6,7 @@ KBRANCH ?= "master-krutrim"
 
 LINUX_VERSION ?= "6.1.15"
 
-SRCREV="c26383668eb35b9c522b9621a7ab33cf92e5f016"
+SRCREV="461d6e46c1a56599c9c26486c1079f4f7710ff84"
 
 PROVIDES += "virtual/kernel"
 

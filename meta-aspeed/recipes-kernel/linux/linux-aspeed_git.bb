@@ -6,7 +6,7 @@ KBRANCH ?= "dev-6115-krutrim"
 
 LINUX_VERSION ?= "6.1.15"
 
-SRCREV="8bdac20d3c3fde1150e2138b2aede21366e8b7c1"
+SRCREV="0bc21e701a6ffacfdde7f04f87d664d82e8a13bf"
 
 PROVIDES += "virtual/kernel"
 
@@ -34,3 +34,4 @@ require recipes-kernel/linux/linux-yocto.inc
 
 # From 5.6+ the COPYING file changed
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
+#"8bdac20d3c3fde1150e2138b2aede21366e8b7c2"

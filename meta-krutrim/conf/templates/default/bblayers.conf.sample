@@ -5,7 +5,6 @@ LCONF_VERSION = "8"
 BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
-# Update the file  1
 BBLAYERS ?= " \
   ##OEROOT##/meta \
   ##OEROOT##/meta-openembedded/meta-oe \

@@ -1,3 +1,2 @@
 Example build invocations:
-
 MACHINE=krutrim bitbake obmc-phosphor-image 

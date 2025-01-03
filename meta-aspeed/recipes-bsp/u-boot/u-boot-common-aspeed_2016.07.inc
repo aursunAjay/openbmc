@@ -8,11 +8,15 @@ PE = "1"
 
 # We use the revision in order to avoid having to fetch it from the
 # repo during parse
-SRCREV = "1ded9fa3a26262efa12aa316f66c73298a84d838"
 
-UBRANCH = "v2016.07-aspeed-openbmc"
-SRC_URI = "git://git@github.com/openbmc/u-boot.git;branch=${UBRANCH};protocol=https"
+SRCREV = "9b3df1b776a2bc5a3b266ee66c6c680d77e3d892"
+
+#UBRANCH = "v2016.07-aspeed-openbmc"
+
+UBRANCH = "u-boot-krutrim"
+
+SRC_URI = "git://git@github.com/aursunAjay/u-boot.git;branch=${UBRANCH};protocol=https"
 
 S = "${WORKDIR}/git"
 
-PV = "v2016.07+git${SRCPV}"
+PV = "v0.1+git${SRCPV}"

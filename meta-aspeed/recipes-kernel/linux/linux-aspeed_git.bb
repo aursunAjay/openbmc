@@ -1,6 +1,36 @@
-KBRANCH ?= "dev-6.1"
+DESCRIPTION = "Linux kernel for Aspeed/krutrim"
+SECTION = "kernel"
+LICENSE = "GPL-2.0-only"
+
+KBRANCH ?= "master-krutrim"
+
 LINUX_VERSION ?= "6.1.15"
 
-SRCREV="580639a973406691fa93b8fa377c4c5a43f66094"
+SRCREV="c26383668eb35b9c522b9621a7ab33cf92e5f016"
 
-require linux-aspeed.inc
+PROVIDES += "virtual/kernel"
+
+KCONFIG_MODE="--alldefconfig"
+
+KSRC ?= "git://github.com/aursunAjay/linux-ajay;protocol=https;branch=${KBRANCH}"
+
+SRC_URI += "${KSRC}"
+SRC_URI += " \
+             file://defconfig \
+             file://rsa_oem_fitimage_key.key;sha256sum=eeb4ff2ebbfbd97b6254fe6dbaeea41067e54c65176c233ec7b2ab2decf1ddcd \
+             file://rsa_oem_fitimage_key.crt;sha256sum=45f5a55497cce8040999bf9f3214d471ac7b83ab7acef41c4425a34662e8372e \
+             ${@bb.utils.contains('MACHINE_FEATURES', 'tpm2', 'file://tpm/tpm2.scc file://tpm/tpm2.cfg', '', d)} \
+             ${@bb.utils.contains_any('DISTRO_FEATURES', \
+                'obmc-static-norootfs obmc-ubi-fs', \
+                'file://ubi/ubi.scc file://ubi/ubi.cfg', '', d)} \
+           "
+
+LINUX_VERSION_EXTENSION ?= "-${SRCREV}"
+
+PV = "${LINUX_VERSION}+git${SRCPV}"
+
+inherit kernel
+require recipes-kernel/linux/linux-yocto.inc
+
+# From 5.6+ the COPYING file changed
+LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"

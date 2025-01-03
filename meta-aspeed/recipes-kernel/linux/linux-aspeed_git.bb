@@ -6,7 +6,7 @@ KBRANCH ?= "dev-6115-krutrim"
 
 LINUX_VERSION ?= "6.1.15"
 
-SRCREV="0bc21e701a6ffacfdde7f04f87d664d82e8a13bf"
+SRCREV="8bdac20d3c3fde1150e2138b2aede21366e8b7c1"
 
 PROVIDES += "virtual/kernel"
 

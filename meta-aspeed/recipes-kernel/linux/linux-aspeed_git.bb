@@ -35,3 +35,5 @@ require recipes-kernel/linux/linux-yocto.inc
 # From 5.6+ the COPYING file changed
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 #"8bdac20d3c3fde1150e2138b2aede21366e8b7c2"
+#"8bdac20d3c3fde1150e2138b2aede21366e8b7c2"
+

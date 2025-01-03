@@ -2,11 +2,11 @@ DESCRIPTION = "Linux kernel for Aspeed/krutrim"
 SECTION = "kernel"
 LICENSE = "GPL-2.0-only"
 
-KBRANCH ?= "master-krutrim"
+KBRANCH ?= "dev-6115-krutrim"
 
 LINUX_VERSION ?= "6.1.15"
 
-SRCREV="461d6e46c1a56599c9c26486c1079f4f7710ff84"
+SRCREV="8bdac20d3c3fde1150e2138b2aede21366e8b7c1"
 
 PROVIDES += "virtual/kernel"
 
